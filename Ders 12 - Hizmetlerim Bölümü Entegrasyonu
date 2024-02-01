@@ -1,0 +1,164 @@
+//İçerik Tipleri
+function icerik_tipleri() {
+
+	$labels = array(
+		'name'                => __( 'Hizmetlerim' ),
+		'singular_name'       => __( 'Hizmetlerim'),
+		'menu_name'           => __( 'Hizmetlerim' ),
+		'parent_item_colon'   => __( 'Hizmetlerim' ),
+		'all_items'           => __( 'Tüm Hizmetlerim' ),
+		'view_item'           => __( 'Hizmetlerimi Gör' ),
+		'add_new_item'        => __( 'Yeni Hizmet Ekle' ),
+		'add_new'             => __( 'Yeni Hizmet Ekle' ),
+		'edit_item'           => __( 'Hizmet Düzenle' ),
+		'update_item'         => __( 'Hizmet Güncelle' ),
+		'search_items'        => __( 'Hizmet Ara' ),
+		'not_found'           => __( 'Bulunamadı' ),
+		'not_found_in_trash'  => __( 'Çöpte Bulunamadı' ),
+	);
+	
+	$args = array(
+		'label'               => __( 'hizmet' ),
+		'description'         => __( 'Hizmet' ),
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'editor', 'thumbnail','comments','excerpt' ),
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_rest' 		  => true,
+		'rest_base'          => 'at',
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		'menu_position'       => 5,
+		"menu_icon" => "dashicons-welcome-learn-more",   
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'post',
+	);
+	
+	register_post_type( 'hizmet', $args );
+   
+	$labels = array(
+		'name'                => __( 'Portfolyo' ),
+		'singular_name'       => __( 'Portfolyo'),
+		'menu_name'           => __( 'Portfolyo' ),
+		'parent_item_colon'   => __( 'Portfolyo' ),
+		'all_items'           => __( 'Tüm Portfolyo' ),
+		'view_item'           => __( 'Portfolyo Gör' ),
+		'add_new_item'        => __( 'Yeni Portfolyo Ekle' ),
+		'add_new'             => __( 'Yeni Portfolyo Ekle' ),
+		'edit_item'           => __( 'Portfolyo Düzenle' ),
+		'update_item'         => __( 'Portfolyo Güncelle' ),
+		'search_items'        => __( 'Portfolyo Ara' ),
+		'not_found'           => __( 'Bulunamadı' ),
+		'not_found_in_trash'  => __( 'Çöpte Bulunamadı' ),
+	);
+	
+	$args = array(
+		'label'               => __( 'portfolyo' ),
+		'description'         => __( 'Portfolyo' ),
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'editor', 'thumbnail','comments','excerpt' ),
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_rest' 		  => true,
+		'rest_base'          => 'at',
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		'menu_position'       => 5,
+		"menu_icon" => "dashicons-admin-customizer",   
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'post',
+	);
+	
+	register_post_type( 'portfolyo', $args );	
+	
+	
+	$labels = array(
+		'name'                => __( 'Referanslar' ),
+		'singular_name'       => __( 'Referanslar'),
+		'menu_name'           => __( 'Referanslar' ),
+		'parent_item_colon'   => __( 'Referanslar' ),
+		'all_items'           => __( 'Tüm Referanslar' ),
+		'view_item'           => __( 'Referans Gör' ),
+		'add_new_item'        => __( 'Yeni Referans Ekle' ),
+		'add_new'             => __( 'Yeni Referans Ekle' ),
+		'edit_item'           => __( 'Referans Düzenle' ),
+		'update_item'         => __( 'Referans Güncelle' ),
+		'search_items'        => __( 'Referans Ara' ),
+		'not_found'           => __( 'Bulunamadı' ),
+		'not_found_in_trash'  => __( 'Çöpte Bulunamadı' ),
+	);
+	
+	$args = array(
+		'label'               => __( 'referans' ),
+		'description'         => __( 'Referans' ),
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'editor', 'thumbnail','comments','excerpt' ),
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_rest' 		  => true,
+		'rest_base'          => 'at',
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		'menu_position'       => 5,
+		"menu_icon" => "dashicons-admin-users",   
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'post',
+	);
+	
+	register_post_type( 'referans', $args );
+	
+}
+
+add_action( 'init', 'icerik_tipleri', 0 );
+
+//İçerik Tipi Kategorileri/
+function taksonomiler() {
+	
+$labels = array(
+"name" => __( 'Portfolyo Kategori', '' ),
+"singular_name" => __( 'Portfolyo Kategori', '' ),
+"menu_name" => __( 'Portfolyo Kategori', '' ),
+"all_items" => __( 'Tüm Portfolyo Kategorileri', '' ),
+"edit_item" => __( 'Portfolyo Kategorisi Düzenle', '' ),
+"view_item" => __( 'Portfolyo Kategorisi Gör', '' ),
+"update_item" => __( 'Portfolyo Kategorisi Güncelle', '' ),
+"add_new_item" => __( 'Yeni Portfolyo Kategorisi Ekle', '' ),
+"new_item_name" => __( 'Yeni Portfolyo Kategorisi Ekle', '' ),	
+);
+
+$args = array(
+"label" => __( 'Portfolyo Kategori', '' ),
+"labels" => $labels,
+"public" => true,
+"hierarchical" => true,
+"label" => "Portfolyo Kategori",
+"show_ui" => true,
+"query_var" => true,
+"rewrite" => array( 'slug' => 'portfolyo-kategori', 'with_front' => true, 'hierarchical' => true ),
+"show_admin_column" => true,
+"show_in_rest" => true,
+"rest_base" => "",
+"show_in_quick_edit" => true,
+);
+register_taxonomy( "portfolyo-kategori", array( "portfolyo" ), $args );
+	
+	
+	
+
+}
+add_action( 'init', 'taksonomiler' );
