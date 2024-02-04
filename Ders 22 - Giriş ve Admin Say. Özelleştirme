@@ -1,0 +1,58 @@
+//Panel Özelleştirmeleri
+
+add_action('admin_head', 'admin_style');
+
+function admin_style() {
+
+include ("style-admin.php"); 
+
+} 
+
+add_filter('admin_title', 'my_admin_title', 10, 2);
+
+function my_admin_title($admin_title, $title)
+
+{
+
+    return get_bloginfo('name').' &bull; '.$title;
+
+}
+
+function login_style() { 
+
+include ("style-login.php"); 
+
+}
+
+add_action( 'login_enqueue_scripts', 'login_style' );
+
+function login_url() {
+
+    return home_url();
+
+}
+
+add_filter( 'login_headerurl', 'login_url' );
+
+function login_url_title() {
+
+    return get_bloginfo('name').' - Yönetim Paneli';
+
+}
+
+add_filter( 'login_headertext', 'login_url_title' );
+
+//Favicon
+
+function add_favicon() {
+
+	echo '<link rel="shortcut icon" href="'.get_template_directory_uri().'/inc/img/logo/favicon.png" type="image/x-icon"/>';	
+
+}
+
+add_action('login_head', 'add_favicon');
+
+add_action('admin_head', 'add_favicon');
+
+add_action('wp_head', 'add_favicon');
+
