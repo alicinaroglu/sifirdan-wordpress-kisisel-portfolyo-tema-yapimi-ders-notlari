@@ -1,0 +1,17 @@
+<?php $haberler = new WP_Query(array(
+
+'post_type'      	=> 'post',
+
+'posts_per_page'	=> 3,
+
+)); ?>
+
+<?php while ( $haberler->have_posts() ) : $haberler->the_post(); 
+
+$haberler_kapak = wp_get_attachment_image_src( get_post_thumbnail_id($haberler->ID), 'thumbnail-full' );
+
+?>
+
+<?php endwhile; ?>
+
+<?php wp_reset_postdata(); ?>
